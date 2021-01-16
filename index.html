@@ -25,22 +25,31 @@
         </h1>
     </header>
     <div id="main" class="main">
+        <script>
+        function submitForm() {
+        
+            var frm = document.getElementsByName('form')[0];
+            frm.submit(); // Submit the form
+            frm.reset();  // Reset all form data
+            return false; // Prevent page refresh
+         }
+        </script>
         <section id="one">
             <h2>Send me a message</h2>
             <div class="form-and-info">
-                <form action="https://formspree.io/f/mwkwarkq" method="POST">
+                <form name= "form" action="https://formspree.io/f/mwkwarkq" method="POST">
                     <div class="name-and-email">
-                        <input type="text" name="name" placeholder="Name"/>
-                        <input type="text" name="_replyto" placeholder="Email">
+                        <input type="text" name="name" placeholder="Name" id="name"/>
+                        <input type="text" name="_replyto" placeholder="Email" id="email">
 
                     </div>
                     
                     
                     
                     
-                        <textarea name="message" placeholder="Message" rows="4"></textarea>
+                        <textarea name="message" placeholder="Message" rows="4" id="message"></textarea>
                     
-                    <button type="submit" class="submit-button">Send</button>
+                    <button type="button" id="btnsubmit" class="submit-button" onclick="submitForm()">Send</button>
                 </form>
                 <ul>
                     <li>
